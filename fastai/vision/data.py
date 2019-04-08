@@ -317,7 +317,8 @@ class ImageList(ItemList):
             axs = subplots(len(xs), 2, imgsize=imgsize, figsize=figsize, title=title, weight='bold', size=14)
             for i,(x,y,z) in enumerate(zip(xs,ys,zs)):
                 x.show(ax=axs[i,0], y=y, **kwargs)
-                x.show(ax=axs[i,1], y=z, **kwargs)
+                x.show(ax=axs[i, 1], y=z, **kwargs)
+        return plt
 
 class ObjectCategoryProcessor(MultiCategoryProcessor):
     "`PreProcessor` for labelled bounding boxes."
@@ -428,7 +429,8 @@ class ImageImageList(ImageList):
         for i,(x,y,z) in enumerate(zip(xs,ys,zs)):
             x.show(ax=axs[i,0], **kwargs)
             y.show(ax=axs[i,2], **kwargs)
-            z.show(ax=axs[i,1], **kwargs)
+            z.show(ax=axs[i, 1], **kwargs)
+        return plt
 
 
 def _ll_pre_transform(self, train_tfm:List[Callable], valid_tfm:List[Callable]):

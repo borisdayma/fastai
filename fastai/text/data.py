@@ -367,6 +367,7 @@ class TextList(ItemList):
         df = pd.DataFrame({n:items[:,i] for i,n in enumerate(names)}, columns=names)
         with pd.option_context('display.max_colwidth', -1):
             display(HTML(df.to_html(index=False)))
+        return df
 
 class LMLabelList(EmptyLabelList):
     "Basic `ItemList` for dummy labels."

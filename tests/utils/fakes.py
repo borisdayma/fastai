@@ -49,6 +49,7 @@ class RandomItemList(ItemList):
     def show_xyzs(self, xs, ys, zs, **kwargs):
         res = [f'{x},{y},{z}' for x,y,z in zip(xs, ys, zs)]
         print('\n'.join(res))
+        return('\n'.join(res))
 
 def fake_basedata(n_in:int=5,batch_size:int=5, train_length:int=None, valid_length:int=None):
     if train_length is None: train_length = 2 * batch_size

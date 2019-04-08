@@ -409,7 +409,7 @@ class Learner():
         else :
             ys = [ds.y.reconstruct(grab_idx(y, i)) for i in range(n_items)]
             zs = [ds.y.reconstruct(z) for z in preds]
-        ds.x.show_xyzs(xs, ys, zs, **kwargs)
+        return ds.x.show_xyzs(xs, ys, zs, **kwargs)
 
 class RecordOnCPU(Callback):
     "Store the `input` and `target` going through the model on the CPU."
